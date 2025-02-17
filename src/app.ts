@@ -32,9 +32,16 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-
+const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'http://localhost:3000'];
 app.use(cors({
-  origin: 'https://desarrollo-front-indol.vercel.app/'
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
 }));
 
 //const SECRET_KEY = process.env.SECRET_KEY || 'default_secret';
