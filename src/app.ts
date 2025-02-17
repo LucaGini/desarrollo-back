@@ -33,7 +33,7 @@ app.use(cors());
 
 
 app.use(cors({
-  origin: 'https://desarrollo-front-indol.vercel.app/'
+  origin: 'https://desarrollo-front-indol.vercel.app'
 }));
 
 //const SECRET_KEY = process.env.SECRET_KEY || 'default_secret';
