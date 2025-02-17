@@ -19,7 +19,7 @@ export class MailService {
   }
 
   async sendPasswordResetEmail(to: string, token: string) {
-    const frontendUrl = 'http://localhost:4200/UserRegistration/new-password';
+    const frontendUrl = 'https://desarrollo-front-indol.vercel.app/UserRegistration/new-password';
     const resetUrl = `${frontendUrl}/${token}`;
     const mailOptions = {
       from: 'chiacoriluli@gmail.com',

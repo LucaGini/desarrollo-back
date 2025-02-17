@@ -33,7 +33,7 @@ app.use(cors());
 
 
 app.use(cors({
-  origin: 'http://localhost:4200'
+  origin: 'https://desarrollo-front-indol.vercel.app/'
 }));
 
 //const SECRET_KEY = process.env.SECRET_KEY || 'default_secret';
@@ -80,5 +80,5 @@ app.use((_, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
-  console.log('Server running on http://localhost:3000/');
+  console.log('Server running on https://desarrollo-back-production.up.railway.app');
 });
