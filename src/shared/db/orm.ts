@@ -7,7 +7,7 @@ export const orm = await MikroORM.init({
   entitiesTs: ['src/**/*.entity.ts'],
   dbName: 'Ecommerce2023',
   type: 'mongo',
-  clientUrl: 'mongodb://127.0.0.1:27017',
+  clientUrl: process.env.MONGO_URL,
   highlighter: new MongoHighlighter(),
   debug: true,
   allowGlobalContext: true,
