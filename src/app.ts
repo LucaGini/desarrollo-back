@@ -38,7 +38,13 @@ app.use((req, res, next) => {
 
 const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'https://desarrollo-back-production.up.railway.app', 'https://desarrollo-back-production.up.railway.app'];
 app.use(cors({
-  origin: ['https://desarrollo-front-indol.vercel.app'],
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
   methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
   allowedHeaders: 'Content-Type,Authorization',
   credentials: true,
@@ -85,7 +91,7 @@ app.use((_, res) => {
   return res.status(404).send({message: 'Resource not found!'});
 });
 
-const PORT = 3000;
+const PORT = process.env.PORT || 0;
 
 app.listen(PORT, async () => {
   console.log('Server running on port', PORT);
