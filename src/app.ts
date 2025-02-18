@@ -29,24 +29,22 @@ import { createDefaultAdmin } from './user/admin.seed.js';
 dotenv.config();
 
 const app = express();
-
-const allowedOrigins = ['https://desarrollo-front-indol.vercel.app'];
-
-app.use(cors({
-  origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Not allowed by CORS'));
-    }
-    
-  },
-  methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
-  allowedHeaders: 'Content-Type,Authorization',
-  credentials: true,
-}));
-
 app.use(express.json());
+
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*'); // Permite todas las conexiones
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.header('Access-Control-Allow-Credentials', 'true');
+
+  // Permitir respuestas a preflight (CORS preflight requests)
+  if (req.method === 'OPTIONS') {
+    return res.sendStatus(204);
+  }
+
+  next();
+});
+
 
 //const SECRET_KEY = process.env.SECRET_KEY || 'default_secret';
 
