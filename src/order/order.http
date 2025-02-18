@@ -1,11 +1,11 @@
 ### Get all orders
-GET http://localhost:3000/api/orders
+GET https://desarrollo-back-production.up.railway.app/api/orders
 
 ### Get single order by ID
-GET http://localhost:3000/api/orders/your-order-id-here
+GET https://desarrollo-back-production.up.railway.app/api/orders/your-order-id-here
 
 ### Create new order
-POST http://localhost:3000/api/orders
+POST https://desarrollo-back-production.up.railway.app/api/orders
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Update order
-PUT http://localhost:3000/api/orders/
+PUT https://desarrollo-back-production.up.railway.app/api/orders/
 Content-Type: application/json
 
 {
@@ -44,10 +44,10 @@ Content-Type: application/json
 }
 
 ### Delete order
-DELETE http://localhost:3000/api/orders/your-order-id-here
+DELETE https://desarrollo-back-production.up.railway.app/api/orders/your-order-id-here
 
 
-POST http://localhost:3000/api/order/update
+POST https://desarrollo-back-production.up.railway.app/api/order/update
 Content-Type: application/json
 
 {

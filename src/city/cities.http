@@ -1,14 +1,14 @@
 ### obtener todas las categorias
 
-GET http://localhost:3000/api/cities
+GET https://desarrollo-back-production.up.railway.app/api/cities
 
 ### obtener un producto por id ----- 1 es el id del producto
 
-GET http://localhost:3000/api/cities/678fa83bcafb7d5d3b68fef8
+GET https://desarrollo-back-production.up.railway.app/api/cities/678fa83bcafb7d5d3b68fef8
 
 ### crear un nuevo producto
 
-POST http://localhost:3000/api/cities
+POST https://desarrollo-back-production.up.railway.app/api/cities
 Content-Type: application/json
 
 {
@@ -21,7 +21,7 @@ Content-Type: application/json
   
 
 ### modificar un producto (PUT - recurso completo e idempotente)
-PUT http://localhost:3000/api/cities/654e64a3c4ea1def4fa94fa0
+PUT https://desarrollo-back-production.up.railway.app/api/cities/654e64a3c4ea1def4fa94fa0
 Content-Type: application/json
 
 {
@@ -33,8 +33,8 @@ Content-Type: application/json
 
 ### modificar un producto (PATCH  - recurso parcial)
 
-PATCH http://localhost:3000/api/cities/1
+PATCH https://desarrollo-back-production.up.railway.app/api/cities/1
 
 ### borrar un producto
 
-DELETE http://localhost:3000/api/cities/654e0e1ae435fe829c912e2e
+DELETE https://desarrollo-back-production.up.railway.app/api/cities/654e0e1ae435fe829c912e2e

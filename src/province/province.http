@@ -1,14 +1,14 @@
 ### obtener todas las provincias
 
-GET http://localhost:3000/api/provinces
+GET https://desarrollo-back-production.up.railway.app/api/provinces
 
 ### obtener un producto por id ----- 1 es el id del producto
 
-GET http://localhost:3000/api/provinces/1   
+GET https://desarrollo-back-production.up.railway.app/api/provinces/1   
 
 ### crear un nuevo producto
 
-POST http://localhost:3000/api/provinces
+POST https://desarrollo-back-production.up.railway.app/api/provinces
 Content-Type: application/json
 
 {
@@ -18,7 +18,7 @@ Content-Type: application/json
 
 ### modificar un producto (PUT - recurso completo e idempotente)
 
-PUT http://localhost:3000/api/provinces/654baf5a2aed6214eed43aa4
+PUT https://desarrollo-back-production.up.railway.app/api/provinces/654baf5a2aed6214eed43aa4
 Content-Type: application/json
 
 {
@@ -28,7 +28,7 @@ Content-Type: application/json
 
 ### modificar un producto (PATCH  - recurso parcial)
 
-PATCH http://localhost:3000/api/provinces/654baf5a2aed6214eed43aa4
+PATCH https://desarrollo-back-production.up.railway.app/api/provinces/654baf5a2aed6214eed43aa4
 Content-Type: application/json
 
 {
@@ -38,4 +38,4 @@ Content-Type: application/json
 
 ### borrar un producto
 
-DELETE http://localhost:3000/api/provinces/656769024f67ce3c38812b6f
+DELETE https://desarrollo-back-production.up.railway.app/api/provinces/656769024f67ce3c38812b6f

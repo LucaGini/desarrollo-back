@@ -36,7 +36,7 @@ app.use((req, res, next) => {
   next();
 });
 
-const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'http://localhost:3000', 'https://desarrollo-back-production.up.railway.app'];
+const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'https://desarrollo-back-production.up.railway.app', 'https://desarrollo-back-production.up.railway.app'];
 app.use(cors({
   origin: (origin, callback) => {
     console.log('Origin:', origin);
