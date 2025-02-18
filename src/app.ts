@@ -31,19 +31,20 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = ['desarrollo-front-indol.vercel.app'];
+const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'http://localhost:3000', 'https://desarrollo-back-production.up.railway.app'];
 app.use(cors({
   origin: (origin, callback) => {
-    console.log(origin);
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
       callback(new Error('Not allowed by CORS'));
     }
-
   },
+  methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization',
   credentials: true,
 }));
+
 //const SECRET_KEY = process.env.SECRET_KEY || 'default_secret';
 
 const SECRET_KEY = 'secretkey123456'; // Debe ser una variable de entorno
@@ -88,6 +89,6 @@ app.use((_, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log('Server running on https://desarrollo-back-production.up.railway.app');
   await createDefaultAdmin();
 });
