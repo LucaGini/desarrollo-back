@@ -31,9 +31,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-const allowedOrigins = ['https://desarrollo-front-indol.vercel.app'];
+const allowedOrigins = ['desarrollo-front-indol.vercel.app'];
 app.use(cors({
   origin: (origin, callback) => {
+    console.log(origin);
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
