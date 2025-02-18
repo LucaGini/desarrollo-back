@@ -31,9 +31,15 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
+app.use((req, res, next) => {
+  console.log('Request Origin:', req.headers.origin);
+  next();
+});
+
 const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'http://localhost:3000', 'https://desarrollo-back-production.up.railway.app'];
 app.use(cors({
   origin: (origin, callback) => {
+    console.log('Origin:', origin);
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
