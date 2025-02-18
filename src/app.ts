@@ -30,7 +30,6 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
 const allowedOrigins = ['https://desarrollo-front-indol.vercel.app', 'http://localhost:3000', '', 'https://desarrollo-back-production.up.railway.app'];
 app.use(cors({
@@ -41,6 +40,8 @@ app.use(cors({
       callback(new Error('Not allowed by CORS'));
     }
   },
+  methods: 'GET,POST,PUT,DELETE,PATCH,OPTIONS',
+  allowedHeaders: 'Content-Type,Authorization',
   credentials: true,
 }));
 
