@@ -88,6 +88,6 @@ app.use((_, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
-  console.log(`Server running on port ${origin}`);
+  console.log(`Server running on port ${PORT}`);
   await createDefaultAdmin();
 });
