@@ -88,6 +88,6 @@ app.use((_, res) => {
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, async () => {
-  console.log('Server running on https://desarrollo-back-production.up.railway.app');
+  console.log(`Server running on port ${origin}`);
   await createDefaultAdmin();
 });
